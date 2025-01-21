@@ -1,8 +1,8 @@
-import requests
+import os, requests
 from send_email import send_email
 
 topic = "tesla"
-api_key = "f7a1fd3758394408bcff59c158bbfd6b"
+api_key = os.getenv("NEWS_API")
 full_url = f"https://newsapi.org/v2/everything?q={topic}&sortBy=publishedAt&language=en&apiKey={api_key}"
 
 # Makes request and gets all content of full_url as one giant string
